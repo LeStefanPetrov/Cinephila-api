@@ -2,13 +2,19 @@ services:
   cinephila-api:
     image: "cinephila-api"
     build: .
+    volumes:
+      - ./src:/app      # Mount local API code
+    working_dir: /app/Cinephila.API
     ports:
       - "8000:5000"
     depends_on:
       cinephila-db:
         condition: service_healthy
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    command: dotnet watch run --urls=http://0.0.0.0:5000
+    entrypoint: ""
 
   redis:
       image: redis:latest
