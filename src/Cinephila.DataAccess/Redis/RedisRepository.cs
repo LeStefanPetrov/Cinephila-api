@@ -22,7 +22,7 @@ namespace Cinephila.DataAccess.Redis
             if (string.IsNullOrWhiteSpace(content))
                 return default;
 
-            return JsonSerializer.Deserialize<T>(content);
+            return JsonSerializer.Deserialize<T>(content.ToString());
         }
 
         public async Task<bool> SetObjectAsync<T>(string key, T data, DateTime expiry)
