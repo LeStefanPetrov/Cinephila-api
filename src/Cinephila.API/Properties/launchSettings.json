@@ -8,10 +8,18 @@
     }
   },
   "profiles": {
-    "Cinephila.API.Development": {
+    "Cinephila.API.Local": {
       "commandName": "Project",
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:8080/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      }
+    },
+    "Cinephila.API.Development": {
+      "commandName": "Project",
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5000/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

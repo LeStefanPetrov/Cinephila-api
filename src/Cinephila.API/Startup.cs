@@ -39,9 +39,9 @@ namespace Cinephila.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CinephilaDbContext context, IOptions<ApiSettings> apiSettings)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment() || env.IsProduction())
+            if (!env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
