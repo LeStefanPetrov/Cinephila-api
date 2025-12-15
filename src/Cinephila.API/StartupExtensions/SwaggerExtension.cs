@@ -21,7 +21,7 @@ namespace Cinephila.API.StartupExtensions
                 options.DescribeAllParametersInCamelCase();
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Settings manager",
+                    Title = "Cinephila API",
                     Version = "0.0.1",
                     Contact = new OpenApiContact
                     {
