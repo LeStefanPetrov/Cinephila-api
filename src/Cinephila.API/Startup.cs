@@ -44,11 +44,8 @@ namespace Cinephila.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cinephila.API v1");
-                    c.DocumentTitle = $"Cinephila Service";
-                    c.OAuthClientId("21758989588-o99527rg1tidhva82aigfg1u6ku81b6q.apps.googleusercontent.com");
-                    c.OAuthClientSecret("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");
-                    c.OAuthScopes([Oauth2Service.Scope.UserinfoProfile, Oauth2Service.Scope.UserinfoEmail]);
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cinephila Internal API v1");
+                    c.DocumentTitle = "Cinephila Internal Service";
                     c.EnableDeepLinking();
                 });
             }
